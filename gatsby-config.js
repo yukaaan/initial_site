@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://netlify.mock-site.net/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,6 +29,18 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://netlify.mock-site.net/graphql`,
+        auth: {
+          htaccess: {
+            username: `tane`,
+            password: `check`,
+          },
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
